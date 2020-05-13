@@ -22,15 +22,6 @@
     </hudson.plugins.copyartifact.CopyArtifact>
   </builders>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>test02_deploy</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
     <hudson.plugins.deploy.DeployPublisher plugin="deploy@1.15">
       <adapters>
         <hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
@@ -39,7 +30,7 @@
           <path></path>
         </hudson.plugins.deploy.tomcat.Tomcat7xAdapter>
       </adapters>
-      <contextPath>mogi240_0513_$BUILD_NUMBER</contextPath>
+      <contextPath>mogi240_NEW_$BUILD_NUMBER</contextPath>
       <war>**/*.war</war>
       <onFailure>false</onFailure>
     </hudson.plugins.deploy.DeployPublisher>
